@@ -3,7 +3,7 @@ import CategoryMenu from '../components/CategoryMenu';
 
 const Home = () => {
     return (
-        <div>
+        <div className='container'>
             <CategoryMenu />
         </div>
     );
