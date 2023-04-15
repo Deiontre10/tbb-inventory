@@ -14,6 +14,8 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 
+import { ErrorBoundary } from 'react-error-boundary';
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -38,11 +40,12 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ApolloProvider client={client}>
+    <ErrorBoundary fallback={<p>Something is wrong</p>}>
+    <ApolloProvider client={client}>  
       <Router>
         <div>
           <StoreProvider>
-            <Nav />
+              <Nav />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -52,6 +55,7 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
+    </ErrorBoundary>
   );
 }
 
