@@ -43,10 +43,12 @@ function CategoryMenu() {
 
     console.log(categories);
     return (
-        <div>
+        <div className='mt-2'>
             <h2>Choose a Category:</h2>
             {categories.map((item) => (
                 <button
+                    type="button"
+                    className="btn btn-primary"
                     key={item._id}
                     onClick={() => {
                         handleClick(item._id);
