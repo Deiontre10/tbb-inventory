@@ -7,37 +7,37 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
               Logout
             </a>
           </li>
-        </ul>
+        </nav>
       );
     } else {
       return (
-        <nav className="flex-row">
-          <li className="mx-1">
-            <Link to="/signup">
-              Signup
-            </Link>
-          </li>
-          <li className="mx-1">
-            <Link to="/login">
-              Login
-            </Link>
-          </li>
-        </nav>
+            <ul className="nav mx-4">
+              <li className="nav-item">
+                <Link className="text-light p-2" to="/signup">
+                  Signup
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="text-light p-2" to="/login">
+                  Login
+                </Link>
+              </li>
+            </ul>
       );
     }
   }
 
   return (
-    <header className="">
+    <header className="navbar navbar-expand-lg navbar-dark bg-primary">
       <h1>
-        <Link to="/">
+        <Link to="/" className="navbar-brand">
           <span role="img" aria-label="shopping bag">🛍️</span>
           TBB
         </Link>
