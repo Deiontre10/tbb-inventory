@@ -18,7 +18,7 @@ function Nav() {
       );
     } else {
       return (
-        <ul className="flex-row">
+        <nav className="flex-row">
           <li className="mx-1">
             <Link to="/signup">
               Signup
@@ -29,7 +29,7 @@ function Nav() {
               Login
             </Link>
           </li>
-        </ul>
+        </nav>
       );
     }
   }

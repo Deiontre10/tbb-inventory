@@ -14,7 +14,6 @@ import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 
-import { ErrorBoundary } from 'react-error-boundary';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,7 +39,6 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <ErrorBoundary fallback={<p>Something is wrong</p>}>
     <ApolloProvider client={client}>  
       <Router>
         <div>
@@ -55,7 +53,6 @@ function App() {
         </div>
       </Router>
     </ApolloProvider>
-    </ErrorBoundary>
   );
 }
 
